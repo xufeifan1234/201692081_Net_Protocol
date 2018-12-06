@@ -83,7 +83,7 @@ struct olsr_cookie_info *hna_gen_timer_cookie = NULL;
  *@return the number of interfaces configured
  */
 int
-olsr_init_interfacedb(void)
+olsr_init_interfacedb(void)  //≥ı ºªØ
 {
   struct olsr_if *tmp_if;
 
