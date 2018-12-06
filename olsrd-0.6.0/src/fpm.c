@@ -199,7 +199,7 @@ const char *
 fpmtoa(float a)
 {
   static int idx = 0;
-  static char ret[4][20];
+  static char ret[4][20];          //สýื้
 
   idx = (idx + 1) % (sizeof(ret) / sizeof(ret[0]));
   snprintf(ret[idx], sizeof(ret[0]), "%.3f", a);
