@@ -62,13 +62,13 @@ static void olsr_clear_two_hop_processed(void);
 
 static struct neighbor_entry *olsr_find_maximum_covered(int);
 
-static uint16_t olsr_calculate_two_hop_neighbors(void);
+static uint16_t olsr_calculate_two_hop_neighbors(void);               //计算2跳邻居节点
 
-static int olsr_check_mpr_changes(void);
+static int olsr_check_mpr_changes(void);                                     //检查mpr
 
-static int olsr_chosen_mpr(struct neighbor_entry *, uint16_t *);
+static int olsr_chosen_mpr(struct neighbor_entry *, uint16_t *);                //选择节点
 
-static struct neighbor_2_list_entry *olsr_find_2_hop_neighbors_with_1_link(int);
+static struct neighbor_2_list_entry *olsr_find_2_hop_neighbors_with_1_link(int);   //通过邻居节点监听到的节点是 2 跳邻居节点，注意这里可以包含节点自身以及某些 1 跳邻居节点。
 
 /* End:
  * Prototypes for internal functions
