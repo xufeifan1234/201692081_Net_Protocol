@@ -1,0 +1,21 @@
+mid_set.c 多接口声明
+74-75 ：reverse_mid_set[idx].next标记的是下一跳的节点，reverse_mid_set[idx].prev标记的是上一条的节点，这两个数组标记了所有与节点距离不超过一条的节点，即为MID消息的通信对象。
+
+TC消息（拓补控制消息）
+在lq_packet.h中，
+120-125 lq_tc_message是封装后的拓补数据包格式。
+               from：到达目的地的倒数第二跳的地址  ansn：记录本节点收到的最近一个Tc分组的ANSN序列号，当收到一个新的TC分组时，将新的TC分组的ANSN号与拓补表中相对应的ANSn比较，以此判断该消息应被接受或是丢弃，neigh：指向广播邻居集的地址结构。
+127-131lq_tc_header是数据包的头部，
+            ansn：记录本节点收到的最近一个TC分组的ANSN序列号。
+            lower_border：表示下一级的边界，
+            upper_border表示上一级的边界。
+packet.h
+ struct tc_message 定义了TC信息数据包格式。
+
+HNA消息 将olsr的移动自组网与没有接口的olsr自组网相连。
+ 该消息创建了对于时间，历史路径的cookie
+Hna_set.c 
+70-71 hna_net_timer_cookie记录数据包头部的Vtime值，类似的下面cookie都是对包内信息的记录。
+72-74 olsr_cookie_set_memory_size记录的是发消息的表
+
+邻居表21.27
